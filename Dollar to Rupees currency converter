@@ -1,4 +1,4 @@
-//wap to convert dollar to ruees
+//wap to convert dollar to rueess using friend function
 
 #include<iostream>
 using namespace std;
