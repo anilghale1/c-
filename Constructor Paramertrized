@@ -1,0 +1,27 @@
+//WAP to pass value of x and y using constructor
+#include<iostream>
+using namespace std;
+class Constructor
+{
+	private:
+		int x;
+		public:
+			Constructor(int y)// Parameterized constructor
+			{
+				x=y;
+				cout<<"Value"<<x<<endl;
+			}
+			int Print(int x)
+			{
+				cout<<"Value2 "<<x<<endl;
+				return x;
+			}
+			
+};
+int main()
+{
+	Constructor obj(10);
+	cout<<"Constructor ";
+	obj.Print(40);
+	return 0;
+}
