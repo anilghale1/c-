@@ -1,0 +1,40 @@
+//wap to calculate area of rectangle of using default arguments
+
+#include<iostream>
+ using namespace std;
+ 
+  class arearect
+  {
+  	  int length;
+  	  int breadth;
+  	  
+  	    public:
+  	    	void setvalue(int x,int y)
+  	    	{
+  	    		length=x;
+  	    	 breadth=y;
+			  }
+			  
+			  void fndarearect()
+			  {
+			  	 int result;
+			  	 result=length*breadth;
+			  	 
+			  	 
+			  	 cout<<"area of rectangle is:"<<result;
+			  }
+			  
+  };
+  
+  int main()
+  {
+  	arearect a;
+   int len,bre;
+   
+   cout<<"enter length and breadth respectively"<<endl;
+   cin>>len>>bre;
+   a.setvalue(len,bre);
+   a.fndarearect();
+   
+   return 0;
+  }
