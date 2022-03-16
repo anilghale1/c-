@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+ class Area
+ {
+ 	 static float pi;
+ 	 int radius;
+ 	 
+ 	 public:
+ 	 void setvalue(int x)
+ 	 {
+ 	 	radius=x;
+	  }
+	  
+	   void areacirc()
+	  {
+	  	 int ar;
+	  	 ar=pi*radius*radius;
+	  	 
+	  	 cout<<"area of circle is :"<<ar;
+	  }
+ };
+ 
+     float Area::pi=3.14;
+     
+     
+     int main()
+     {
+     	Area obj;
+      int r;
+      
+      cout<<"enter radius for the circle:"<<endl;
+      cin>>r;
+      
+      obj.setvalue(r);
+      obj.areacirc();
+      
+      return 0;
+}
