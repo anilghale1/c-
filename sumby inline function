@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+  
+    class add
+    {
+        int a;
+		int b;
+		
+		public:
+	
+			
+		void setvalue(int x,int y)
+		{
+			 a=x;
+			 b=y;
+			
+			}	
+			
+			inline void sum()
+		{
+			int result;
+			result=a+b;
+			
+			cout<<"required sum is:"<<result<<endl;
+			}
+	};
+	
+	
+	int main()
+	{
+		add obj;
+		int num1,num2;
+		
+		cout<<"enter first number"<<endl;
+		cin>>num1;
+		
+		cout<<"enter second number"<<endl;
+		cin>>num2;
+		
+		obj.setvalue(num1,num2);
+		obj.sum();
+		
+		return 0;
+	}
