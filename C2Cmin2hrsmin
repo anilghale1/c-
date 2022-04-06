@@ -1,0 +1,58 @@
+//wap to ask minutes and convert to hour and min using class to class tyoe
+
+#include<iostream>
+ using namespace std;
+ 
+ class Distance
+ {
+ 	 int hrs,min;
+ 	 public:
+ 	 	Distance(int m)
+ 	 	{
+ 	 		min=m;
+ 	 		
+ 	 	}
+		  int getTime()
+		  {
+		  	 hrs=min/60;
+		  	  return (hrs);
+		  }
+		
+		  
+ };
+ 
+ class Minute
+ {
+ 	int Hour,minute;
+ 	public:
+ 		Minute(int t)
+ 		{
+ 			Hour=0;
+ 			minute=t%60;
+		 }
+		 void operator =(Distance d1)
+		 {
+		 	Hour=d1.getTime();
+		 //	minute=d1.min;
+		 }
+		 void display()
+		 {
+		 	cout<<" Total hours : "<<Hour<<endl<<" Total minutes : "<<minute<<endl;
+		 }
+		 
+ };
+ int main()
+ {
+ 	int hour,minute;
+ 	cout<<"Enter time in minutes"<<endl;
+ 	cin>>minute;
+ 	Distance d1(minute);
+ 	Minute m1(minute);
+ 	
+ 	m1=d1;
+ 	m1.display();
+ 	
+ 	
+ 	
+ 	return 0;
+ }
