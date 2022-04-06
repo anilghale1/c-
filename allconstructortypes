@@ -1,0 +1,49 @@
+//wap tp show default,parameterized and copy constructor
+#include<iostream>
+using namespace std;
+	
+	class rectangle
+	{
+		private:
+			int len;
+		   int breadth;
+			
+			public:
+				void GetArea()
+				{
+					cout<<"THe area of rectangle is:"<<(len*breadth)<<endl;
+				}
+				
+	 rectangle()  //use of default constructor
+	{
+	  len=3;
+	  breadth=5;	
+	}
+	rectangle(int a,int b) //use of parameterized constructor
+    {
+    	len=a;
+    	breadth=b;
+	}
+	
+	rectangle(rectangle &rec1)  //use pof copy constructor65
+	{
+		len=rec1.len;
+		breadth=rec1.breadth;
+	}
+	};
+	
+	
+	
+	
+	int main()
+	{
+		rectangle rec1;
+		rectangle rec2(4,5);
+		rectangle rec3(rec1);
+		
+		rec1.GetArea();
+		rec2.GetArea();
+		rec3.GetArea();
+		
+		return 0;
+	}
