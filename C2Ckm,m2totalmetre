@@ -1,0 +1,63 @@
+//wap to ask user to enter km and metre and convert it into total metre
+
+#include<iostream>
+ using namespace std;
+ 
+ class Distance
+ {
+ 	int km,m;
+ 	public:
+ 		Distance(int k1,int m1)
+ 		{
+ 		 km=k1;
+ 			m=m1;
+		 }
+		 int getDistance()
+		 {
+		 	return (km*1000+m);
+		 }
+		 void display()
+		 {
+		 	cout<<"distance before using class to class type(Kilometre,metre)"<<km<<m<<endl;
+		 }
+		 
+ };
+ class mettr
+ {
+ 	int metre;
+ 	public:
+ 		mettr()
+ 		{
+ 			metre=0;
+		 }
+		 void operator =(Distance d)
+		 {
+		 	metre=d.getDistance();
+		 }
+		 void display()
+		 {
+		 
+		 cout<<"Total metre = "<<metre<<endl;
+		 
+	   	}
+ };
+ 
+ 
+ 
+ int main()
+ {
+ 	int kilo,metre;
+ 	cout<<"Enter value for kilometre"<<endl;
+ 	cin>>kilo;
+ 	cout<<"Enter value for metre"<<endl;
+ 	cin>>metre;
+ 	Distance d1(kilo,metre);
+ 	mettr m1;
+ 	d1.display();
+ 	m1=d1;
+ 	m1.display();
+ 	
+ 	
+ 	
+ 	return 0;
+ }
