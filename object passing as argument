@@ -1,0 +1,33 @@
+//wap to show working of object passing as arguement
+#include<iostream>
+ using namespace std;
+ 
+ class Example
+ {
+ 	public:
+ 		int a;
+ 		
+ 		void add(Example E)
+ 		{
+ 		   a=a+E.a;	
+		 }
+ };
+ 
+ int main()
+ {
+ 	Example e1,e2;
+ 	int a=0;
+ 	
+ 	e1.a=50;
+ 	e2.a=100;
+ 	
+ 	cout<<"initial values\n"<<endl;
+ 	cout<<"values of object 1: "<<e1.a<<endl<<"values of object 2: "<<e2.a<<endl;
+ 	
+ 	e1.add(e2);
+ 	
+ 		cout<<"\nnew values\n"<<endl;
+ 	cout<<"values of object 1: "<<e1.a<<endl<<"values of object 2: "<<e2.a;
+ 	
+ 	return 0;
+ }
