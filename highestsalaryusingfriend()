@@ -1,0 +1,81 @@
+
+//wap to find higehest salary of employeeusing friend function
+#include<iostream>
+using namespace std;
+  
+   class emp
+   {
+   	 public:
+   	 	int id;
+   	 	int salary;
+   	 	char name[15];
+   	 	
+   	 	input(emp x[])
+   	 	{
+   	 		int i=0;
+   	
+   	 		for(i=0;i<10;i++)
+   	 		{
+   	 			cout<<"enter id of employee"<<endl;
+   	 			cin>>id;
+   	 			
+   	 			cout<<"enter salary of employee"<<endl;
+   	 			cin>>salary;
+   	 			
+   	 			
+				}
+			}
+			
+			friend calculation(emp x[])
+			{
+				emp temp;
+				int k=0,l=0;
+				
+				
+				for(k=0;k<10;k++)
+				{
+				  	for(l=k+1;l<10;l++)
+				{
+					if(x[k].salary>x[l].salary)
+					{
+					
+					temp=x[k];
+					x[k]=x[l];
+					x[l]=temp;
+				}
+				}
+			    }
+			    
+			    
+			}
+			
+			output()
+			{
+				int m;
+				for(m=0;m<10;m++)
+				{
+				     cout<<salary<<endl;	
+				}
+			}
+   };
+   
+   
+   
+   int main()
+   {
+   	  emp o[10];
+   	  
+   	  int j=0;
+   	  for(j=0;j<10;j++)
+   	  {
+   	  	o[j].input();
+   	  	o[j].calculation();
+   	  	o[j].output();
+		 }
+   	  
+   	  
+   	  
+   	  
+   	  
+   	  return 0;
+   }
