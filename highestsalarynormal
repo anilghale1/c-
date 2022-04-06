@@ -1,0 +1,62 @@
+//wap to find highest salary of a employee
+#include<iostream>
+using namespace std;
+
+  class sort
+  {
+  	private:
+  		int salary[5];
+  		char name[20];
+  		public:
+  			void getdata();
+  			void putdata();
+  };
+  
+  void sort::getdata()
+  {
+  	int i,k,j;
+  	
+  	cout<<"enter details of employee"<<endl;
+  	for(i=0;i<2;i++)
+  	{
+  		fflush(stdin);
+  		cout<<"enter name of employee";
+  		cin>>name[i];
+  		fflush(stdin);
+  		
+  			cout<<"enter salary of employee";
+  			cin>>salary[i];
+  			fflush(stdin);
+  			
+  		   for(i=0;i<2;i++)
+         	{
+         		for(j=i+1;j<10;j++)
+         		  {
+         		  	if(salary[i]>salary[j])
+         		  	   {
+         		  	   	  k=salary[i];
+         		  	   	  salary[i]=salary[j];
+         		  	   	  salary[j]=k;
+						  }
+				   }
+	        }
+    }
+}
+
+void sort::putdata()
+{
+	int k;
+	for(k=0;k<2;k++)
+	{
+		cout<<salary[k]<<endl;
+	}
+}
+
+int main()
+{
+	sort s;
+	s.getdata();
+	s.putdata();
+	
+	return 0;
+}
