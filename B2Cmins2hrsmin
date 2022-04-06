@@ -1,0 +1,31 @@
+//wap to convert minutes into hour and minutes using basic to class type constructor
+#include<iostream>
+ using namespace std;
+   
+   class time
+   {
+   	 int hrs,min;
+   	 public:
+   	 	time(int t)
+   	 	{
+   	 		hrs=t/60;
+   	 		min=t%60;
+			}
+			void display()
+		{
+			cout<<"Hours :"<<hrs<<"Minutes :"<<min;
+		}
+   };
+   int main()
+   {
+   	// time t;
+   	 int duration;
+   	 
+   	 cout<<"enter duration in minutes"<<endl;
+   	 cin>>duration;
+   	time t=duration;
+   	 t.display();
+   	 return 0;
+   	 
+   	 
+   }
