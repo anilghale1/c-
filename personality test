@@ -1,0 +1,269 @@
+//personality test program
+
+#include<iostream>
+#include<string>
+ using namespace std;
+ 
+ class PersonTest
+ {
+ 	int cow,tiger,sheep,horse,pig;
+ 	string dog,cat,rat,coffee,ocean;
+ 	string yellow,orange,red,white,green;
+ 	public:
+ 		void setValueC(int c,int t,int s,int h,int p)
+ 		
+ 		{
+ 		    cow=c;
+			 tiger=t;
+			 sheep=s;
+			 horse=h;
+			 pig=p;	
+		 }
+		 void displayhead();
+		 
+		 void displayC();
+		 void displayc();
+			  
+			   void display1();
+			   void display2();
+			   void display3();
+			   
+			   void displayL();
+			   void displayP();
+			   
+		
+				   
+		void setValueL(string d,string ca,string r,string co,string o)
+		 {
+		 	dog=d;
+		 	cat=ca;
+		 	rat=r;
+		 	coffee=co;
+		 	ocean=o;
+		 }
+		 void setValueP(string y,string ora,string re,string w,string g)
+		 {
+		 	yellow=y;
+		 	orange=ora;
+		 	red=re;
+		 	white=w;
+		 	green=g;
+		 }
+ 	
+ };
+ 
+ void PersonTest::displayC()
+		 {
+		 	if(cow==5)
+		 	  {
+		 	  	cout<<"\n\nYour First Priority in Life is Your Carrer"<<endl;
+			   }
+			   else if(tiger==5)
+			   {
+			   	 cout<<"Your First Priority in Life is Your Pride"<<endl;
+			   	 
+			   }
+			   else if(sheep==5)
+			   {
+			   	 cout<<"Your First Priority in Life is Beloved One"<<endl;
+			   }
+			   else if(horse==5)
+			   {
+			   	 cout<<"Your first priority in Life is Family"<<endl;
+			   	 
+			   }
+			   else 
+			   {
+			   	cout<<"Your First priority in Life is Money"<<endl;
+			   }
+		}
+		
+		 
+			   void PersonTest::displayc()
+			   {
+			   	  if(cow==4)
+		 	  {
+		 	  	cout<<"Your 2nd Priority in Life is Your Carrer"<<endl;
+			   }
+			   else if(tiger==4)
+			   {
+			   	 cout<<"Your 2nd Priority in Life is Your Pride"<<endl;
+			   	 
+			   }
+			   else if(sheep==4)
+			   {
+			   	 cout<<"Your 2nd Priority in Life is Beloved One"<<endl;
+			   }
+			   else if(horse==4)
+			   {
+			   	 cout<<"Your 2nd priority in Life is Family"<<endl;
+			   	 
+			   }
+			   else 			   {
+			   	cout<<"Your 2nd priority in Life is Money"<<endl;
+			   }
+		}
+		
+		  void PersonTest::display1()
+			   {
+			   	if(cow==3)
+		 	  {
+		 	  	cout<<"Your 3rd Priority in Life is Your Carrer"<<endl;
+			   }
+			   else if(tiger==3)
+			   {
+			   	 cout<<"Your 3rd Priority in Life is Your Pride"<<endl;
+			   	 
+			   }
+			   else if(sheep==3)
+			   {
+			   	 cout<<"Your 3rd Priority in Life is Beloved One"<<endl;
+			   }
+			   else if(horse==3)
+			   {
+			   	 cout<<"Your 3rd priority in Life is Family"<<endl;
+			   	 
+			   }
+			   else
+			   {
+			   	cout<<"Your 3rd priority in Life is Money"<<endl;
+			   }
+		}
+		
+		   void PersonTest::display2()
+			   {
+			   	  if(cow==2)
+		 	  {
+		 	  	cout<<"Your 4th Priority in Life is Your Carrer"<<endl;
+			   }
+			   else if(tiger==2)
+			   {
+			   	 cout<<"Your 4th Priority in Life is Your Pride"<<endl;
+			   	 
+			   }
+			   else if(sheep==2)
+			   {
+			   	 cout<<"Your 4th Priority in Life is Beloved One"<<endl;
+			   }
+			   else if(horse==2)
+			   {
+			   	 cout<<"Your 4th priority in Life is Family"<<endl;
+			   	 
+			   }
+			   else 
+			   {
+			   	cout<<"Your 4th priority in Life is Money"<<endl;
+			   }
+				}
+				
+					void PersonTest::display3()
+					{
+						if(cow==1)
+		 	  {
+		 	  	cout<<"Your 5th Priority in Life is Your Carrer"<<endl;
+			   }
+			   else if(tiger==1)
+			   {
+			   	 cout<<"Your 5th Priority in Life is Your Pride"<<endl;
+			   	 
+			   }
+			   else if(sheep==1)
+			   {
+			   	 cout<<"Your 5th Priority in Life is Beloved One"<<endl;
+			   }
+			   else if(horse==1)
+			   {
+			   	 cout<<"Your 5th priority in Life is Family"<<endl;
+			   	 
+			   }
+			   else 
+			   {
+			   	cout<<"Your 5th priority in Life is Money"<<endl;
+			   }
+					}
+					
+			 void PersonTest:: displayhead()
+		 {
+		 
+		 displayC();
+		 displayc();
+			  
+          	 display1();
+			    display2();
+			    display3();
+		}
+		
+		 void PersonTest:: displayL()
+		 {
+		 	cout<<"\n\nYour Personality :"<<dog<<endl;
+		 	cout<<"Your Spouse or Couple Personality :"<<cat<<endl;
+		 	cout<<"Your Enemies Personality :"<<rat<<endl;
+		 	cout<<"Your Interpretation On Sex :"<<coffee<<endl;
+		 	cout<<"Your Own Life is :"<<ocean<<endl;
+			 		 }
+			 		 
+			void PersonTest::displayP()
+			{
+				cout<<"\n\nSomeone You will never forgot :"<<yellow<<endl;
+				cout<<"Someone you could consider a Good friend :"<<orange<<endl;
+				cout<<"Someone you really love :"<<red<<endl;
+				cout<<"Someone you will remember all your life :"<<green<<endl;
+				cout<<"Your Twin Soul :"<<white<<endl;
+			}
+			   				  	
+							  		
+ int main()
+ {
+ 	PersonTest obj;
+ 	int cows,tigers,sheeps,horses,pigs;
+ 		string dogs,cats,rats,coffees,oceans;
+ 	string yellows,oranges,reds,whites,greens;
+ 	
+ 	cout<<"1) Cows\n 2) Tigers\n 3) Sheeps\n 4) Horses\n 5) Pigs"<<endl;
+ 	cout<<"Please give a priority number from (1-5) to each one by one "<<endl<<endl;
+ 	cin>>cows>>tigers>>sheeps>>horses>>pigs;
+ 	
+ 	obj.setValueC(cows,tigers,sheeps,horses,pigs);
+ 	
+ 	system("cls");
+ 	cout<<"\nGive your description on DOg"<<endl;
+ 	cin>>dogs;
+ 	cout<<"GIve your description on Cats"<<endl;
+ 	cin>>cats;
+ 	cout<<"GIve your description on Rats"<<endl;
+ 	cin>>rats;
+ 	cout<<"Give your description on Coffee"<<endl;
+ 	cin>>coffees;
+ 	cout<<"GIve your description on Oceans"<<endl<<endl;
+ 	cin>>oceans;
+ 	
+ 	obj.setValueL(dogs,cats,rats,coffees,oceans);
+ 	system("cls");
+ 	
+    cout<<"\nImagine about Yellow colour and think of one person on this color"<<endl;
+ 	cin>>yellows;
+ 	
+ 	cout<<"Imagine about Orange colour and think of one person on this color"<<endl;
+ 	cin>>oranges;
+ 	
+ 	cout<<"Imagine about Red colour and think of one person on this color"<<endl;
+ 	cin>>reds;
+ 	
+ 	cout<<"Imagine about white colour and think of one person on this color"<<endl;
+ 	cin>>whites;
+ 	
+ 	cout<<"Imagine about Green colour and think of one person on this color"<<endl;
+ 	cin>>greens; 
+ 	
+ 	obj.setValueP(yellows,oranges,reds,whites,greens); 
+ 	
+ 	obj.displayhead();
+ 	obj.displayL();
+ 	obj.displayP();
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	return 0;
+ }
