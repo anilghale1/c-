@@ -1,0 +1,46 @@
+//WAp to show class to basic concept
+#include<iostream>
+#include<conio.h>
+#include<iomanip>
+using namespace std;
+ class time
+ {
+ 	public:
+ 	int hrs,min;
+ 	public:
+ 		time(int a,int b)
+ 		{
+ 		//	cout<<"constructor called with two parameters"<<endl;
+ 			hrs=a;
+ 			min=b;
+ 			cout<<"total mins = "<<(hrs*60+min)<<endl;
+ 			
+		 } 
+		 operator int()
+		 {
+		 // cout<<"class type to basic type conversion"<<endl;
+		 	return(hrs*60+min);
+		 } 
+ };
+ 
+ int main()
+ {
+ //  time obj();
+ 	int h,m,duration;
+ 	
+ 	cout<<"enter hours"<<endl;
+ 	cin>>h;
+ 	cout<<"enter mins"<<endl;
+ 	cin>>m;
+ 
+ 	time obj(h,m);
+ 	duration=obj;
+ 	
+ 	cout<<"\ntotal minutes = "<<duration<<endl;
+ 	cout<<"\n2nd method operator overloading duration = "<<obj.operator int();
+ 	
+ 	cout<<"\ntotal minutes are"<<duration;
+ 	
+ 	return 0;
+ 	
+ }
