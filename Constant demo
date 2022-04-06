@@ -1,0 +1,14 @@
+//wap to demonstrate constant use
+#include<iostream>
+using namespace std;
+
+#define anil 9.8
+
+int main()
+{
+	const ram 8;
+	cout<<"output is "<<anil<<endl;
+	cout<<"output is "<<ram<<endl;
+	
+	return 0;
+}
