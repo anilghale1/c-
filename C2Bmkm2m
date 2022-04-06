@@ -1,0 +1,32 @@
+//wap to take metre and km and convert it into metre
+
+#include<iostream>
+ using namespace std;
+ 
+ class Distance
+ {
+ 	int km,m;
+ 	public:
+ 		Distance(int d1,int d2)
+ 		{
+ 			km=d1;
+ 			m=d2;
+		 }
+		 operator int()
+		 {
+		 	return (km*1000+m);
+		 }
+ };
+ int main()
+ {
+ 	int kim,met,distance;
+ 	cout<<"enter kilolmetre and metre";
+ 	cin>>kim>>met;
+ 	
+ 	Distance d(kim,met);
+ 	distance=d;
+ 	
+ 	cout<<"Distance in metre : "<<distance;
+ 	
+ 	return 0;
+ }
