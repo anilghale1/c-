@@ -1,0 +1,86 @@
+//wap to wherever two parent and child input personality blood group and coulour using inheritance 
+
+#include<iostream>
+ using namespace std;
+ 
+ class Test
+ {
+ 	 
+ 	 protected:
+ 	 	string blood,blood1;
+ 	 	public:
+ 	 		string color,color1;
+ 	 		string personality,personality1;
+ 	 		
+ 	 		void setValue(string x,string m)
+ 	 		{
+ 	 			blood=x;
+ 	 			blood1=m;
+			  }
+			  
+ 	 		
+ 	 		
+ };
+ class Small : public Test
+ {
+ 	public:
+ 	 void add(string y,string z,string g,string h)
+ 	 {	
+	    
+ 	 	color=y;
+ 	 	personality=z;
+ 	 	
+ 	 	color1=g;
+ 	 	personality1=h;
+ 	 
+ 	 	 
+	  }
+ };
+ class Compare: public Test
+ {
+ 	public:
+ 	void compare()
+ 	{
+ 		string result;
+ 		if(color==color1 && personality==personality1 && blood==blood1)
+ 		   {
+ 		   	   cout<<"parents and childs all characteristics matched"<<endl;
+			}
+			else
+			{
+				cout<<"parents and childs characteristics doesnot mathced"<<endl;
+			}
+	 }
+ };
+ int main()
+ {
+ 	
+ 	Test obj;
+ 	Small obj1;
+ 	Compare obj2;
+ 	string b,c,p,b1,c1,p1;
+ 	
+ 	
+ 	cout<<"Please enter blood group of parent"<<endl;
+ 	cin>>b;
+ 	cout<<"Please enter colour of parent"<<endl;
+ 	cin>>c;
+ 	cout<<"Please enter personality of your parent good or bad"<<endl;
+ 	cin>>p;
+ 	
+ 	cout<<"Please enter blood group of child"<<endl;
+ 	cin>>b1;
+ 	cout<<"Please enter colour of child"<<endl;
+ 	cin>>c1;
+ 	cout<<"Please enter personality of your child good or bad"<<endl;
+ 	cin>>p1;
+ 	
+ 	
+ 	obj.setValue(b,b1);
+ 	obj1.add(c,p,c1,p1);
+ 	
+ 	obj2.compare();
+ 
+ 	return 0;
+ }
+ 
