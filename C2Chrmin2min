@@ -1,0 +1,57 @@
+//wap to pass hr and min and calculate total minutes
+#include<iostream>
+ using namespace std;
+ 
+ class time
+ {
+ 	int hrs,min;
+ 	public:
+ 		time(int h,int m)
+ 		{
+ 			hrs=h;
+ 			min=m;
+		 }
+		 int getMinute()
+		 {
+		 	int totalmin=(hrs*60)+min;
+		 	return totalmin;
+		 }
+		 
+		 void display()
+		 {
+		 	cout<<"Hours :"<<hrs<<endl;
+		 	cout<<"mins :"<<min<<endl;
+		 }
+ };
+  
+   class minute
+   {
+   	  int min;
+   	  public:
+   	  	minute()
+   	  	{
+   	  		min=0;
+			 }
+			 void operator =(time t)
+			 {
+			 	min=t.getMinute();
+			 }
+			 void display()
+			 {
+			 	cout<<"\n total minutes: "<<min<<endl;
+			 }
+   };
+   int main()
+   {
+   	 time t1(2,30);
+   	 t1.display();
+   	 
+   	 minute m1;
+   	 m1.display();
+   	 m1=t1;
+   	 
+   	 t1.display();
+   	 m1.display();
+   	 
+   	 return 0;
+   }
