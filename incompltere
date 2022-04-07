@@ -1,0 +1,84 @@
+//wap to wherever two parent and child input personality blood group and coulour using inheritance 
+
+#include<iostream>
+ using namespace std;
+ 
+ class Test
+ {
+ 	 
+ 	 protected:
+ 	 	string blood,blood1;
+ 	 	public:
+ 	 		string color,color1;
+ 	 		string personality,personality1;
+ 	 		
+ 	 		
+			  
+ 	 		
+ 	 		
+ };
+ class Small : public Test
+ {
+ 	public:
+ 	 void add(string y,string z,string g,string h,string x,string m)
+ 	 {	
+	    
+ 	 	color=y;
+ 	 	personality=z;
+ 	 	
+ 	 	color1=g;
+ 	 	personality1=h;
+ 	 	
+ 	 	blood=x;
+ 	 	blood1=m;
+ 	 	
+ }
+     void display()
+ 	 {
+ 	 		if(color==color1 && personality==personality1 && blood==blood1)
+ 		   {
+ 		   	   cout<<"parents and childs all characteristics matched"<<endl;
+			}
+			else
+			{
+				cout<<"parents and childs characteristics doesnot mathced"<<endl;
+			}
+ 	 
+	  }
+ 	 	 
+	  
+ };
+ 
+ int main()
+ {
+ 	
+ 	
+ 	Small obj1;
+ 	
+ 	string b,c,p,b1,c1,p1;
+ 	
+ 	
+ 	cout<<"Please enter blood group of parent"<<endl;
+ 	getline(cin,b);
+ 	cout<<"Please enter colour of parent"<<endl;
+ 	getline(cin,c);
+ 	cout<<"Please enter personality of your parent good or bad"<<endl;
+ 	cin>>p;
+ 	
+ 	cout<<"Please enter blood group of child"<<endl;
+ 	cin>>b1;
+ 	cout<<"Please enter colour of child"<<endl;
+ 	cin>>c1;
+ 	cout<<"Please enter personality of your child good or bad"<<endl;
+ 	cin>>p1;
+ 	
+ 	
+ 	obj1.add(b,b1,c,p,c1,p1);
+ 	obj1.display();
+ 	
+ 	
+ 	
+ 
+ 	return 0;
+ }
+ 
