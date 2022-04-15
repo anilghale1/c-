@@ -1,77 +1,66 @@
-//program to ask user p,t,r and calculate total amount using inheritance concept
+//WAP to ask customer name,bank ac number and help them to calculate their total bank balance on saving or current account using inheritance concept
 #include<iostream>
 #include<cmath>
+#include<cstdio>
+
  using namespace std;
  
  class Account
  {
-   public:
-  
  	protected:
     string name;
 	double ac_num;
-	
-	 int rate1;
-  int rate2;
-	
+	static float rate1;
+	static float rate2;
 	int time;
 	int p_amt;
-	double SI;
-	double CI;
-	
-	    	
- };
- 
- 
- class Current_ac : public Account
+	int SI;
+	float CI;
+};
+  class Current_ac : public Account
  {
- 	
  	public:
- 	void setValue1(int p,int t,double an,int r)
+ 	void setValue1(int p,int t,double an,string uname)
  	{
  		p_amt=p;
  		time=t;
  		ac_num=an;
- 		rate1=r;
+ 		name=uname;
 	 }
-    void calc_SI()
-	{
-		int SI;
-		SI=((p_amt*time*rate1)/100);
-	  } 
-	  void display1()
+     void display1()
 	  {
-	  	 cout<<"Total Amount of Bank ac Number "<<ac_num<<" is "<<(SI+p_amt)<<endl;
-	  	
+	  	int SI;
+		SI=(p_amt*time*rate1)/100;
+	  	 cout<<"\n\n\tTotal Bank Balance of "<<name<<" is RS. "<<(SI+p_amt)<<endl;
+	  	 cout<<"\tFrom the Bank Account Number "<<ac_num<<endl;
+	  	 cout<<"\n\t\tDHANYEBAD"<<endl;
 	  }
-	   
-	 	
  };
-  
-   class Saving_ac : public Account
- { 
-   
-    	public:
- 	void setValue2(int p,int t,double an,int r1)
+ 
+ class Saving_ac : public Account
+ {    
+   public:
+ 	void setValue2(int p,int t,double an,string usernaam)
  	{
  		p_amt=p;
  		time=t;
  		ac_num=an;
- 		rate2=r1;
+ 		name=usernaam;
 	 }
-    void calc_CI()
-	{
-		int CI;
-		CI=(p_amt*pow((1+rate2/100),time));
-	  } 
+   
 	  void display2()
 	  {
-	  	 cout<<"Total Amount of Bank ac Number "<<ac_num<<" is "<<(CI+p_amt)<<endl;
+	  	float CI;
+		CI=p_amt*pow((1+(rate2/100)),time);
+	  	 cout<<"\n\n\tTotal Bank Balance of "<<name<<" is RS. "<<(CI+p_amt)<<endl;
+	  	 cout<<"\tFrom the Bank Account Number "<<ac_num<<endl;
+	  	 cout<<"\n\t\tDHANYEBAD"<<endl;
 	  	
 	  }
 		
  };
- 
+ float Account :: rate1=5;
+ float Account :: rate2=10;
  
  int main()
  {
@@ -80,27 +69,64 @@
  	
  	int principle,time;
  	double acountnum;
- 	int ra,ra1;
+ 	string username;
+ 	int choice;
+ 	cout<<"\n\t\tHAMRO BANK RAMRO BANK"<<endl<<endl;
+ 	cout<<"1> Current Account\n2> Saving Account\n3> Exit()"<<endl;
+ 	flag:
+ 	cout<<"Enter Your Choice from (1-2)"<<endl;
+ 	cin>>choice;
+ 	
+ 	switch (choice)
+ 	{
+ 	case 1:
+ 	cout<<"\n\nEnter your name"<<endl;
+    cin>>username;
+    fflush(stdin);
     
-    
- 	cout<<"Enter your acount numnber"<<endl;
+ 	cout<<"Enter your account numnber"<<endl;
  	cin>>acountnum;
  	
 	 cout<<"Enter your principle amount to deposit into bank"<<endl;
- 	cin>>principle;
+ 	 cin>>principle;
  	
  	cout<<"Enter time how much you like to hold your amounts"<<endl;
  	cin>>time;
- 	cout<<"Enter rate for SI"<<endl;
- 	cin>>ra;
-     cout<<"Enter rate for CI"<<endl;
- 	cin>>ra1;
- 	obj.setValue1(principle,time,acountnum,ra);
+ 	obj.setValue1(principle,time,acountnum,username);
  	obj.display1();
+ 	break;
  	
- 	obj1.setValue2(principle,time,acountnum,ra1);
+ 	 case 2:
+ 	cout<<"\n\nEnter your name"<<endl;
+    cin>>username;
+    fflush(stdin);
+    
+ 	cout<<"Enter your account numnber"<<endl;
+ 	cin>>acountnum;
+ 	
+	 cout<<"Enter your principle amount to deposit into bank"<<endl;
+ 	 cin>>principle;
+ 	
+ 	cout<<"Enter time how much you like to hold your amounts"<<endl;
+ 	cin>>time;
+ 	
+ 	
+ 	obj1.setValue2(principle,time,acountnum,username);
  	obj1.display2();
+ 	break;
  	
+ 	case 3:
+ 		exit(0);
+ 		break;
+ 		
+ 		default:
+ 			cout<<"GALAT JAWAF "<<endl;
+ 			goto flag;
+ 			break;
+ 			
+	 }
+ 	
+ 		
  	return 0;
  }
  
