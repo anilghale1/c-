@@ -5,15 +5,19 @@
  
  class Account
  {
+   public:
+  
  	protected:
     string name;
 	double ac_num;
-	static int rate1;
-	static int rate2;
+	
+	 int rate1;
+  int rate2;
+	
 	int time;
 	int p_amt;
-	int SI;
-	int CI;
+	double SI;
+	double CI;
 	
 	    	
  };
@@ -23,16 +27,17 @@
  {
  	
  	public:
- 	void setValue1(int p,int t,double an)
+ 	void setValue1(int p,int t,double an,int r)
  	{
  		p_amt=p;
  		time=t;
  		ac_num=an;
+ 		rate1=r;
 	 }
     void calc_SI()
 	{
-		int SI=0;
-		SI=(p_amt*time*rate1)/100;
+		int SI;
+		SI=((p_amt*time*rate1)/100);
 	  } 
 	  void display1()
 	  {
@@ -42,21 +47,22 @@
 	   
 	 	
  };
- 
- class Saving_ac : public Account
- {    
-   int CI;
+  
+   class Saving_ac : public Account
+ { 
+   
     	public:
- 	void setValue2(int p,int t,double an)
+ 	void setValue2(int p,int t,double an,int r1)
  	{
  		p_amt=p;
  		time=t;
  		ac_num=an;
+ 		rate2=r1;
 	 }
     void calc_CI()
 	{
-		int SI=0;
-		CI=p_amt*pow((1+rate2/100),time);
+		int CI;
+		CI=(p_amt*pow((1+rate2/100),time));
 	  } 
 	  void display2()
 	  {
@@ -65,8 +71,7 @@
 	  }
 		
  };
- int Account :: rate1=5;
- int Account :: rate2=10;
+ 
  
  int main()
  {
@@ -75,6 +80,7 @@
  	
  	int principle,time;
  	double acountnum;
+ 	int ra,ra1;
     
     
  	cout<<"Enter your acount numnber"<<endl;
@@ -85,11 +91,14 @@
  	
  	cout<<"Enter time how much you like to hold your amounts"<<endl;
  	cin>>time;
- 	
- 	obj.setValue1(principle,time,acountnum);
+ 	cout<<"Enter rate for SI"<<endl;
+ 	cin>>ra;
+     cout<<"Enter rate for CI"<<endl;
+ 	cin>>ra1;
+ 	obj.setValue1(principle,time,acountnum,ra);
  	obj.display1();
  	
- 	obj1.setValue2(principle,time,acountnum);
+ 	obj1.setValue2(principle,time,acountnum,ra1);
  	obj1.display2();
  	
  	return 0;
