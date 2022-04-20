@@ -1,0 +1,41 @@
+//wap to swap contains of two variables pf type int, float, and double using function template
+#include<iostream>
+using namespace std;
+
+ template <class  T>
+ class Swap{
+ 	T num1,num2,temp;
+ 	
+	 public:
+ 		void setVAlue(T &x,T &y)
+ 		{
+ 			num1=x;
+ 			num2=y;
+		 }
+		 void fswap()
+		 {
+		     temp=num1;
+		     num1=num2;
+		     num2=temp;
+		     
+		     cout<<"result after swapping : "<<num1<<"  "<<num2<<endl;
+		 }
+ 	
+ }; 
+ 
+ 
+ int main()
+ {
+ 	Swap <int> obj;
+ 	int fnum,snum;
+ 	cout<<"Enter two number two get swap result :"<<endl;
+ 	cin>>fnum>>snum;
+ 	
+ 	cout<<"Result before swapping :"<<fnum<<"  "<<snum<<endl;
+ 	
+ 	obj.setVAlue(fnum,snum);
+ 	obj.fswap();
+ 	
+ 	
+ 	return 0;
+  } 
