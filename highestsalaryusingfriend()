@@ -10,33 +10,33 @@ using namespace std;
    	 	int salary;
    	 	char name[15];
    	 	
-   	 	input(emp x[])
+   	 void	input(emp x[])
    	 	{
    	 		int i=0;
    	
-   	 		for(i=0;i<10;i++)
+   	 		for(i=0;i<3;i++)
    	 		{
    	 			cout<<"enter id of employee"<<endl;
-   	 			cin>>id;
+   	 			cin>>x[i].id;
    	 			
    	 			cout<<"enter salary of employee"<<endl;
-   	 			cin>>salary;
+   	 			cin>>x[i].salary;
    	 			
    	 			
 				}
 			}
 			
-			friend calculation(emp x[])
+			 friend void calculation(emp x[])
 			{
 				emp temp;
 				int k=0,l=0;
 				
 				
-				for(k=0;k<10;k++)
+				for(k=0;k<3;k++)
 				{
-				  	for(l=k+1;l<10;l++)
+				  	for(l=k+1;l<3;l++)
 				{
-					if(x[k].salary>x[l].salary)
+					if(x[k].salary<x[l].salary)
 					{
 					
 					temp=x[k];
@@ -44,19 +44,14 @@ using namespace std;
 					x[l]=temp;
 				}
 				}
+				
 			    }
 			    
+			     cout<<"hishest salary :"<<x[0].salary<<endl;	
 			    
 			}
 			
-			output()
-			{
-				int m;
-				for(m=0;m<10;m++)
-				{
-				     cout<<salary<<endl;	
-				}
-			}
+		
    };
    
    
@@ -66,16 +61,12 @@ using namespace std;
    	  emp o[10];
    	  
    	  int j=0;
-   	  for(j=0;j<10;j++)
+   	  for(j=0;j<3;j++)
    	  {
-   	  	o[j].input();
-   	  	o[j].calculation();
-   	  	o[j].output();
+   	  	o[j].input(o);
+   	  	calculation(o);
+   	  	
 		 }
-   	  
-   	  
-   	  
-   	  
    	  
    	  return 0;
    }
