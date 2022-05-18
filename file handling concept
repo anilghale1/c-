@@ -1,0 +1,51 @@
+file handling concept in c++
+1> program to file  write operation
+2> file to program read operation
+        
+                 stream based input output
+   stream are data bytes. Data channel going and outing.
+   1> input stream = flow of data device to memory  (cin)
+   2> input stream = flow of data memory to device  (cout)
+ major class is ios class lies in top hierarchy
+  its type:
+  1) istream and ostream
+  in istream : ifstream = This data type represents the input file stream and is used to read information from files.
+  in ostream : ofstream = This data type represents the output file stream and is used to create files and to write information to files.
+  
+  fstream:
+This class is the combination of both ofstream and ifstream. It provides the capability of creating, writing
+and reading a file. To access the following classes, you must include the fstream as a header file like how we
+declare iostream in the header.
+ 
+  fstream
+  This data type represents the file stream generally, and has the capabilities of
+  both ofstream and ifstream which means it can create files,
+  write information to files, and read information from files.
+
+  formatted and unformatted
+  formatted : includes format specifier    (printf,scanf)
+  unformatted : excludes format specifier  (cin,cout)
+
+   create a file
+   open a file
+   read from a file
+   write a file
+   close a file
+
+   File Operations in C++
+C++ provides us with four different operations for file handling. They are:
+  
+
+open() – This is used to create a file.  syntax> objectname.open( FileName , Mode );
+                                         ios::in (File opened in reading mode)
+read()  – This is used to read the data from the file.
+write() – This is used to write new data to file.  syntax> FileName<<"Insert the text here";
+                                                   ios::out (File opened in write mode)
+
+ close() – This is used to close the file.  syntax> objectname.close()        
+
+ get()	Read a single character from a file
+
+ put()	write a single character in file.
+ 
+ while(1) -> infinity
