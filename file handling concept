@@ -49,3 +49,22 @@ write() – This is used to write new data to file.  syntax> FileName<<"Insert t
  put()	write a single character in file.
  
  while(1) -> infinity
+ 
+ 
+   FILE HANDLING CONCEPT
+   cin cout are object of class iostream
+  (cerr)-> ostream
+   cin.ignore(); work as fflush (stdin)
+ 
+hl
+  char c;
+cin >> noskipws;    // Stops all further whitespace skipping
+while (cin >> c) {  // Reads whitespace chars now.
+    count++;
+}
+
+solution 2:
+char c;
+while (cin.get(c)) {  // Always reads whitespace chars.
+    count++;
+}
