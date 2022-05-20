@@ -1,0 +1,45 @@
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main()
+{
+	
+	ofstream fout;
+
+	char c;
+
+
+	fout.open("index.txt");
+
+
+	
+
+	    cout<<"Enter one line"<<endl;
+	    cin >> noskipws;   
+        while (cin >> c) { 
+        count++;
+       }
+	
+        fout << line << endl;
+
+
+	fout.close();
+
+
+	ifstream fin;
+
+
+	fin.open("index.txt");
+     while (fin) {
+        getline(fin, line);
+        cout <<endl<< line << endl;
+	}
+    fin.close();
+    return 0;
+}
+
+
