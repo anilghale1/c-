@@ -1,0 +1,59 @@
+#include<iostream>
+#include<fstream>
+  using namespace std;
+  
+  class data
+  {
+  	public:
+  	 string name;
+  	 int id;
+  	 public:
+  	 void getdata();
+  	 void printdata();
+  };
+  void data::getdata()
+  {
+  	ofstream file;
+  	 cout<<"enter name :"<<endl;
+  //	 cin.getline(name,30);
+  	 cin>>name;
+  	// getline(cin,name);
+  	 cin.ignore();
+  	 cout<<"enter id"<<endl;
+  	 cin>>id;
+  	 cin.ignore();
+  	 file.open("stu.dat");
+  	 file.write((char *)this,sizeof(data));
+  	 file.close();
+  	
+  	 
+  }
+  void data::printdata()
+  {
+  	 
+  }
+  
+  int main()
+  {
+     data obj;	
+  	 int choice;
+  	 
+  	 cout<<"enter your choice";
+  	 cin>>choice;
+  	 
+  	 switch(choice)
+  	 {
+  	 	case 1:
+  	 		obj.getdata();
+  	 		break;
+  	 		
+  	 	case 2:
+  	 		obj.printdata();
+  	 		break;
+  	 		
+  	 		default:
+  	 			cout<<"wrong choice"<<endl;
+  	 			break;
+	   }
+  	return 0;
+  }
