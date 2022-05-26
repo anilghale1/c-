@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main()
+{
+	
+	ofstream fout;
+
+	string line;
+
+
+	fout.open("index.txt");
+
+
+	
+
+	    cout<<"Enter one line"<<endl;
+	    getline(cin,line);
+       
+	
+        fout << line << endl;
+
+
+	fout.close();
+
+
+	ifstream fin;
+
+
+	fin.open("index.txt");
+     while (!fin.eof()) {
+        getline(fin, line);
+        cout <<endl<< line << endl;
+	}
+    fin.close();
+    return 0;
+}
+
