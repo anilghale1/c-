@@ -1,0 +1,579 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<fstream>
+ using namespace std;
+ 
+ class Travel {
+    char name[20];
+    char gender[6];
+    int age;
+    int k;
+    char destination[20];
+    char date[20];
+    long int b;
+    long int c;
+    int id;
+public:
+    	int amount;
+    	char type[60];
+		char place[30];
+	//	char date[20];
+		char ch;
+    
+    public:
+    	 void menu();  //function for continuing two function details and receipt
+          void heading(); //function for presenting main heading wherever necessary
+          void details(); //functon for taking necessary details of traveller's
+           void nepal();   //function for viewing list of tour package available in Nepal
+            void receipt(); //function for displaying receipt of the traveller's selected package
+             void pokhara();  //function for displaying necessary information of pokhara
+           void kathmandu(); //function for displaying necessary infotmation of kathmandu
+              void solukhumbu(); //function for displaying necessary information of solukhumbu
+            void mustang(); //function for displaying necessary information of mustang
+          void chitwan(); //function for displaying necessary information of chitwan
+         void lumbini(); //function for displaying necessary information of lumbini
+         void placeinfo();//function for displaying all the places necessary information to make traveller's make best choice
+         void aboutus(); //function for displaying all the related information of our company
+         void terms(); //function for displaying all the terms and condition which is really very necessary to be followed
+
+         void viewreceipt();    //function for searching traveller's details
+        void mainmenu();     //function for viewing main menu where all the important functions are listed
+        void tempmenu();
+       void setvalue(int amt)
+       {
+       	  amount=amt;
+	   }
+};
+
+class Login:public Travel{
+	public:
+		int tot;
+		int amounts;
+	void adminlogin();
+void userregister();
+void userlogin();
+void logfunc();
+  };
+
+  void Login:: adminlogin()
+{
+  int amt1,amt2;
+   string pass ="";
+   char ch;
+   cout<<"\n\n\n\n\n\n\n\n\t\t\t\t\t       TRAVEL SYSTEM \n\n";
+   cout<<"\t\t\t\t\t------------------------------";
+   cout<<"\n\t\t\t\t\t\t    ADMIN LOGIN \n";	
+   cout<<"\t\t\t\t\t------------------------------\n\n";	
+   cout << "\t\t\t\t\tEnter Password: ";
+   cin>>pass;
+//   ch = getchar();
+//   while(ch != 13){
+//      pass.push_back(ch);
+//      cout << '*';
+//      ch = getchar();
+//   }
+   if(pass == "pass"){
+      cout << "\n\n\n\t\t\t\t\t\tAccess Granted! \n"<<endl;
+//      Login qr[5];
+      ofstream fouts;
+      fouts.open("tmo.txt");
+      cout<<"Enter amount for pokhara : "<<endl;
+      cin>>amt1;
+      fouts<<amt1;
+      
+      ofstream fouts2;
+      fouts2.open("mustangamt.txt");
+      cout<<"Enter amount for mustang : "<<endl;
+      cin>>amt2;
+      fouts2<<amt2;
+//      for(int i=0;i<5;i++)
+//      {
+//	  
+//      cout<<"Enter amount for "<<i+1<<endl;
+//      cin>>qr[i].amounts;
+//  }
+//      fouts.write((char *)&qr,sizeof(qr));
+      fouts.close();
+      //fouts<<amounts;
+  
+      getchar();
+      
+//      getchar();
+//      logfunc();
+      
+     
+   }
+   else{
+      cout << "\n\n\t\t\t\t\t\t\tAccess Aborted...\n\t\t\t\t\t\t\tPlease Try Again\n\n";
+   }
+   
+}
+
+void Login:: userregister()
+{
+	string ruserID,rpassword,rid,rpass;
+	system("cls");
+	cout<<"\t\t\t Enter the username : ";
+	cin>>ruserID;
+	cout<<"\t\t\t Enter the password : ";
+	cin>>rpassword;
+	
+	
+	ofstream f1;
+	f1.open("record.txt",ios::app);
+	f1<<ruserID<<' '<<rpassword<<endl;
+	system("cls");
+	getchar();
+	cout<<"\n\t\t\t Registration is succesfull! \n ";
+	getchar();
+	userlogin();
+//	int main();
+}
+  
+void Login::userlogin()
+{
+	int count;
+	string userID,password,id,pass;
+	system("cls");
+	cout<<"\t\t\t Please enter the username and password: ";
+	cout<<"\t\t\t USERNAME : ";
+	cin>>userID;
+	cout<<"\t\t\t PASSWORD : ";
+	cin>>password;
+	
+	ifstream input("record.txt");//to check whether username and pass already exist in our records
+	while(input>>id>>pass)//
+	{
+		if(id==userID && pass==password)
+		{
+			count=1;
+			system("cls");
+		}
+	}
+	input.close();
+	getchar();
+	if(count==1)
+	{
+	
+		cout<<userID<<"\n Your LOGIN is succesfull! \n";
+		getchar();
+			}
+	else
+	{
+		
+		cout<<"\n LOGIN ERROR!! \n Please check your username and password\n";
+	getchar();
+     userlogin();	
+	}
+}
+//void Travel::tempmenu()
+//{
+//	menu();
+//	details();
+//	receipt();
+//}
+void Travel::menu()
+{
+	int a;
+    system("cls"); //clear the screen
+   // heading();
+   
+    strcpy(type, "Nepal Tour Package");
+    printf("\t\t\tNEPAL TOUR PACKAGE\n\n");
+
+    printf("\t\t1) Pokhara Tour Packages\n");
+    printf("\t\t2) Mustang Tour Packages\n");
+    printf("\t\t3) Lumbini Tour Packages\n");
+    printf("\t\t4) Chitwan Tour Packages\n");
+    printf("\t\t5) Kathmandu Tour Packages\n");
+    printf("\t\t6) Solukhumbu Tour Packages\n");
+    printf("\t\t7) Return Back to Main Menu\n");
+    flag:
+    printf("\t\tEnter Choice: ");
+    scanf("%d", &a);
+
+    if (a == 1) {
+	strcpy(place, "Pokhara Tour");
+	system("cls");
+	pokhara();
+	            }
+    else if (a == 2) {
+	strcpy(place, "Mustang Tour");
+	system("cls");
+	mustang();
+		     }
+//    else if (a == 3) {
+//	strcpy(place, "Lumbini Tour");
+//	system("cls");
+//	lumbini();
+//		     }
+//    else if (a == 4) {
+//	strcpy(place, "Chitwan Tour");
+//	system("cls");
+//	chitwan();
+//		     }
+//
+//    else if (a == 5) {
+//	strcpy(place, "Kathmandu Tour");
+//	system("cls");
+//	kathmandu();
+//		    }
+//
+//    else if (a == 6) {
+//	strcpy(place, "Solukhumbu Tour");
+//	system("cls");
+//	solukhumbu();
+		     //}
+    else if (a==7)
+    {
+       mainmenu();
+    }
+
+    else
+    {
+	printf("Enter Correct Choice...");
+	goto flag;
+    }
+}
+
+void Travel::pokhara()
+{
+	
+	//Travel d;
+	//getchar();
+//	getchar();
+//	int choice;
+//	int nam=0,kam=0;
+//
+//	flag:
+//	label:
+//	system("cls");
+//	//heading();
+//	printf("\n\n\t\t\t\tPOKHARA TOUR PACKAGE");
+//	printf("\n\n\n\t\t\t  1) Basic Package--5d/Rs. 14,999\n\t\t\t  2) Advance Package--7d/Rs. 24,999\n\t\t\t  3) Back to Nepal Tour Package\n");
+//	printf("\n\t\t\t Please choose option (1-3)");
+//	scanf("%d",&choice);
+//	if(choice==1)
+//	{
+
+		system("cls");
+	//	int mero=1;
+	      //	amount= 14999;
+		printf("\nThings to do in Pokhara.              \t\tTrip Facts");
+		printf("\n\n1) Visig Davis Fall                 \t\tDuration: 5days");
+		printf("\n2) Go down the Gupteshwor Mahadev Cave\t\tGrade: Easy");
+		printf("\n3) Walk and Cycle around Fewa Lake    \t\tMaximnum elevation:742m");
+		printf("\n4) Boating on Fewa Lake               \t\tRoute:Ktm-Pokhara");
+		printf("\n5) Visit Gurkha Memorial Museum");
+		printf("\n6) Visit Tal Barahi and Bindhabashi Temple");
+		printf("\t\n\nCost included:");
+		printf("\n\n1)Tickets for bus.");
+		printf("\n2)Dinner/Lunch");
+		printf("\n3)Guide service charge");
+		printf("\n4)Vehicle service charge");
+		printf("\n5)Hotel Booking");
+		printf("\n6)Boating Charge");
+		printf("\n7)Cycling Charge");
+		printf("\n8)All Visiting Place Entrance Charges");
+
+	details();
+	ifstream in;
+	int total1;
+	//int tot;
+//	Login qs[5];
+	in.open("tmo.txt");
+	while(!in.eof())
+	{
+//		in.read((char *)&qs,sizeof(qs));
+         in>>total1;
+         
+	}
+	   cout<<"Total "<<total1<<endl;
+//	int total2;
+
+	//amount=5000;
+	//receipt();
+//	tempmenu();
+//	getchar();
+//	getchar();
+//	tempmenu();
+//	
+}
+void Travel::mustang()
+{
+	getchar();
+	//amount=5000;
+	details();
+	getchar();
+	receipt();
+	getchar();
+	mainmenu();
+}
+void Travel::placeinfo()
+{
+	getchar();
+   printf("\n1) POKHARA:\n");
+  printf("\tSet at the base of the foothills and surrounded by some of the highest\n\tmountains in the world - Dhaulagiri, Manaslu, and Annapurna I,\n\tPokhara is one of Nepal's most scenic cities.");
+
+  printf("\n2) Mustang:\n");
+  printf("\tThe district is a part of Gandaki Province in northern Nepal,\n\tstraddlesthe Himalayas and extends northward onto the Tibetan Plateau. ");
+
+  printf("\n3) Lumbini:\n");
+  printf("\tSiddhartha Gautama,the Lord Buddha, was born in 623 B.C.\n\tin the famous gardens of Lumbini, which soon became a place of\n\tpilgrimage. ");
+
+  printf("\n4) Chitwan:\n");
+  printf("\tAt the foot of the Himalayas, Chitwan is one of the few remaining\n\tundisturbed vestiges of the 'Terai' region, which formerly extended\n\tover the foothills of India and Nepal. ");
+
+  printf("\n5) Kathmandu:\n");
+  printf("\tKathmandu is the largest city and capital of Nepal and the namesake of\n\tthe Kathmandu Valley.");
+
+  printf("\n6) Solukhumbu:\n");
+  printf("\tSolukhumbu is one of the Eastern-most areas of Nepal and features high\n\taltitutes mountains.");
+  printf("\nPress Enter to get back to main menu");
+  getchar();	
+}
+void Travel::viewreceipt()
+{
+	
+	getchar();
+	Travel op;
+	int ids;
+	int total1,total2;
+	ifstream fin;
+	fin.open("traveling.txt");
+	getchar();
+	cout<<"enter your id to search"<<endl;
+	cin>>ids;
+	getchar();
+	while(!fin.eof())
+ 		{
+ 			fin.read((char *)&op,sizeof(op));
+ 			
+ 			if(ids==op.id)
+	{
+		getchar();
+		cout<<"Name = "<<op.name<<endl;
+		cout<<"Age = "<<op.age<<endl;
+		cout<<"Gender = "<<op.gender<<endl;
+		cout<<"Date = "<<op.date<<endl;
+		cout<<"Destination = "<<op.destination<<endl;
+		
+	}
+}
+
+//	ifstream in;
+//	//int tot;
+////	Login qs[5];
+//	in.open("tmo.txt");
+//	while(!in.eof())
+//	{
+////		in.read((char *)&qs,sizeof(qs));
+//         in>>total1;
+//         
+//	}
+//	   cout<<"Total "<<total1<<endl;
+	  // in.close();
+
+	   ifstream in2;
+	   in2.open("mustangamt.txt");
+	     while(!in2.eof())
+	{
+//		in.read((char *)&qs,sizeof(qs));
+        in2>>total2;
+         
+	}
+	cout<<"Total amount of mustang : "<<total2<<endl;
+	   
+//		for(int j=0;j<5;j++)
+//		{
+//			cout<<qs[j].tot<<endl;
+//		}
+//	
+//	else{
+//		cout<<"sorry not found "<<endl;
+//	}
+
+      
+	
+	getchar();
+	
+	
+}
+void Travel::terms()
+{
+}
+void Travel::receipt()
+{
+	getchar();
+	ifstream ins;
+	int total;
+	//int num;
+	ins.open("tmo.txt");
+	while(!ins.eof())
+	{
+		ins>>total;
+		
+	}
+	
+	cout<<"Total Amount = "<<total<<endl;
+}
+void Travel::aboutus()
+{
+}
+void Travel::details()
+{
+	   ofstream fout;
+        Travel tr;
+        int num;
+		//count++;
+		fout.open("traveling.txt",ios::app);
+		cout<<"\n\t\tEnter name of traveller:";
+		cin>>tr.name;
+		fflush(stdin);
+
+		  printf("\t\tEnter id of traveller:");
+		  cin>>tr.id;
+		  fflush(stdin);
+
+		  printf("\t\tEnter gender of traveller:");
+		  cin>>tr.gender;
+		  fflush(stdin);
+
+		  printf("\t\tEnter age of traveller:");
+		  cin>>tr.age;
+		  fflush(stdin);
+
+		  printf("\t\tEnter checkin date (y/m/d):");
+		 cin>>tr.date;
+		  fflush(stdin);
+
+		  printf("\t\tEnter Destination:");
+		  cin>>tr.destination;
+		  fflush(stdin);
+		  
+		  
+		  
+		  fout.write((char *)&tr,sizeof(tr));
+		fout.close(); 
+		cout<<"press enter to search your receipt"<<endl;
+		getchar();
+		viewreceipt();
+		
+		//cout<<"Total amount = "<<tr.amount;
+		//Travel::receipt();
+		
+}
+		 // fwrite(&stu,sizeof(stu),1,fp);
+//		 printf("\n\t\tAdd another record(y/n)-: ");
+//		  another=getche();
+//
+//			  }
+			  
+
+void Travel::mainmenu()
+{
+	int option;
+      system("cls");
+   // heading();
+    printf("\n\t\t\t1) Place Information\n\t\t\t2) About Us\n\t\t\t3) Terms and Condition\n\t\t\t4) Search Traveller's Information\n\t\t\t5) Exit\n\t\t\t6) Menu");
+
+    printf("\n\t\t\tEnter Choice(1-5)");
+    label:
+    scanf("%d",&option);
+   
+
+	 if(option == 1)
+	{
+	  system("CLS");
+	  placeinfo();
+	}
+	 else if(option == 2)
+	{
+	   system("CLS");
+	   aboutus();
+	}
+	else if(option== 3)
+	{
+	   system("CLS");
+	   terms();
+	}
+
+	else if(option==4)
+	{
+	    system("cls");
+	    viewreceipt();
+	}
+	else if(option==5)
+	{
+	    system("cls");
+	    exit(0);
+	}
+	else if(option==6)
+	{
+		system("cls");
+		menu();
+	}
+
+	else
+	{
+	   printf("\n\n\t\t\tPlease enter the given choice from(1-8)");
+	   goto label;
+	}
+	  	
+}
+void Login::logfunc()
+{
+    int c;
+	cout<<"\t\t\t-------------------------------------------------------\n\n\n";
+	cout<<"\t\t\t-------------------WELCOME-----------------------------\n\n\n";
+
+	cout<<"\t\t\t-------------------MENU-----------------------------\n\n\n";
+	cout<<"                                                         \n";
+	cout<<"\t |Press 1 for ADMIN LOGIN |"<<endl;   
+	cout<<"\t |Press 2 for SIGN UP |"<<endl; 
+	cout<<"\t |Press 3 for USER LOGIN |"<<endl;
+	cout<<"\t |Press 4 for USER LOGOUT|"<<endl;
+	cout<<"\n\t\t Please enter your choice : ";
+	cin>>c;
+	cout<<endl;
+	
+	switch(c)
+	{
+		case 1:
+			adminlogin();
+			break;
+			
+		case 2 :
+			userregister();
+			break;
+			
+		case 3 :
+			userlogin();
+			break;	
+		case 4:
+			exit(0);
+			break;
+			
+		default:
+			system("cls");
+			cout<<"\t\t\t Please select from the options given above!!! \n"<<endl;
+			break;
+	}
+	
+		
+}
+int main()
+{
+	
+	Login obj;
+	Travel object;
+	int c;
+	int amts;
+    obj.logfunc();
+	object.mainmenu();
+	object.menu();
+//	object.receipt();
+	//obj.menu();
+	return 0;
+}
